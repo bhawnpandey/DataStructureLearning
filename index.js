@@ -13,4 +13,4 @@ function findAvengers(d) {
   console.log("Total time taken by program "+(t1-t0) +"miliseconds");
 }
 
-findAvengers(largeArray);
+findAvengers(largeArray); 

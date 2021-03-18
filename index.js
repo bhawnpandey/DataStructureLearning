@@ -1,16 +1,29 @@
-const avenger= ["Hulk"];
-const allAvengers = ["Iron Man","Black Widow","Hulk","Thor","Captain America", "Ant Man","Wasp","HawKeye","Black Panther"];
-
-const largeArray = new Array(10000).fill("Hulk");
-function findAvengers(d) {
-  let t0 = new Date().getTime();
-  for(var i = 0; i < d.length; i++){
-    if(d[i] === "Hulk"){
-      console.log("Found avenger");
-    }
+class MyArray{
+  constructor(){
+    this.length = 0;
+    this.data = {};
   }
-  let t1 = new Date().getTime();
-  console.log("Total time taken by program "+(t1-t0) +"miliseconds");
+
+  get(index){
+    return this.data[index];
+  }
+
+  push(item){
+    this.data[this.length] = item;
+    this.length++;
+    return this.length;
+  }
+
+  pop(){
+    const lastItem = this.data[this.length-1];
+    delete this.data[this.length-1];
+    this.length--;
+    return lastItem;
+  }
 }
 
-findAvengers(largeArray); 
+const myArr = new MyArray();
+console.log(myArr.push("hi"));
+console.log(myArr.push("you"));
+console.log(myArr.pop());
+console.log(myArr);

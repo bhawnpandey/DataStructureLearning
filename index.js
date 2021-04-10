@@ -1,29 +1,18 @@
-class MyArray{
-  constructor(){
-    this.length = 0;
-    this.data = {};
+// resverse string
+function reverse(str){
+  //console.log(str);
+  if(!str || str.length < 2 || typeof str != "string"){
+    return "Invalid string";
   }
+  const backwards = [];
+  const sringLength = str.length - 1;
+  for(let i = sringLength; i >=0 ; i--){
+    backwards.push(str[i]);
+  }
+  
+  return backwards.join("");;
 
-  get(index){
-    return this.data[index];
-  }
-
-  push(item){
-    this.data[this.length] = item;
-    this.length++;
-    return this.length;
-  }
-
-  pop(){
-    const lastItem = this.data[this.length-1];
-    delete this.data[this.length-1];
-    this.length--;
-    return lastItem;
-  }
 }
 
-const myArr = new MyArray();
-console.log(myArr.push("hi"));
-console.log(myArr.push("you"));
-console.log(myArr.pop());
-console.log(myArr);
+reverse('Hi how are you doin');
+
